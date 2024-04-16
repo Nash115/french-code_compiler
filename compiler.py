@@ -1,7 +1,12 @@
-import tools.scanner as scanner
-import tools.parser as parser
+import frontend.scanner as scanner
+import frontend.parser as parser
 
 if __name__ == "__main__":
-    tokens = scanner.scan_file(scanner.sys.argv[1])
-    parser.parse(list(tokens))
-    print(tokens)
+    code_file = scanner.sys.argv[1] # For example: "test.baguette"
+
+    parser = parser.Parser()
+    parser.produceTokens(code_file)
+    # print(parser.tokens)
+    program = parser.produceAST(scanner.sys.argv[1])
+
+    print(program)
