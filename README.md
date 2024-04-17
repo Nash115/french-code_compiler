@@ -22,3 +22,4 @@ python main.py examples/example01.baguette
 - [Fluent UI Emoji](https://github.com/microsoft/fluentui-emoji) for the baguette emoji
 - [V2F (Youtube)](https://www.youtube.com/@V2F) for his video "J'ai codé un langage de programmation..." who inspired and helped me to create this project
 - [tylerlaceby (Youtube)](https://www.youtube.com/watch?v=8VB5TY1sIRo&list=PL_2VhOvlMk4UHGqYCLWc6GO8FaPl8fQTh&index=1&t=0s) for whole of the playlist who helped me to create this project
+- [Himitsu](https://github.com/Chloecureuil) for a part of the idea and the help to create this project
