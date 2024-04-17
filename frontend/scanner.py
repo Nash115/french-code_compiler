@@ -78,12 +78,6 @@ def scan_file(file_name:str)->list:
                 continue
 
             keyword_found = False
-            # for keyword, keyword_type in keywords.items():
-            #     if line[index:index+len(keyword)] == keyword:
-            #         tokens.append({'type': keyword_type,'value': line[index:index+len(keyword)],'position': (line_index, index)})
-            #         index += len(keyword)
-            #         keyword_found = True
-            #         break
             for keyword_type, symbols in keywords.items():
                 for symbol in symbols:
                     if line[index:index+len(symbol)] == symbol:
