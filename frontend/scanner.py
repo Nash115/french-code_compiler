@@ -5,6 +5,7 @@ keywords = {
     "parenthesis_open": ["("],
     "parenthesis_close": [")"],
     "binary_operator": ["+", "-", "*", "/", "%"],
+    "null":["nul"],
 
     "bool": ["vrai", "faux"],
     "end_of_instruction": [";"],
@@ -21,6 +22,7 @@ class TokenType:
     ParenthesisOpen = "parenthesis_open"
     ParenthesisClose = "parenthesis_close"
     BinaryOperator = "binary_operator"
+    Null = "null"
 
     Bool = "bool"
     EndOfInstruction = "end_of_instruction"

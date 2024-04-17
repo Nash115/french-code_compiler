@@ -1,10 +1,10 @@
 from colorama import Fore
-from frontend.ast_nodes import Stmt, Program, Exprs, BinaryExpr, Identifier, NumericLiteral
+from frontend.ast_nodes import Stmt, Program, Exprs, BinaryExpr, Identifier, NumericLiteral, NullLiteral
 from frontend.scanner import scan_file, TokenType, Token
 
 def raise_error(msg:str, token:Token=None):
     print(Fore.RED, end="")
-    print(f"⚠️ 🥖 ERROR : {msg}")
+    print(f"⚠️ 🥖 Parser ERROR : {msg}")
     if token:
         print(f"Token ({token.type}) \"{token.value}\" at position {token.position}")
     print(Fore.RESET, end="")
@@ -36,10 +36,8 @@ class Parser:
     def produceAST(self, source_code : str) -> Program:
         self.produceTokens(source_code)
         program = Program([])
-
         while self.notEOF():
             program.body.append(self.parseStmt())
-
         return program
     
     def parseStmt(self) -> Stmt:
@@ -54,7 +52,6 @@ class Parser:
             operator = self.eat().value
             right = self.parseMultiplicativeExpr()
             left = BinaryExpr(left, right, operator)
-
         return left
     
     def parseMultiplicativeExpr(self) -> Exprs:
@@ -63,7 +60,6 @@ class Parser:
             operator = self.eat().value
             right = self.parsePrimaryExpr()
             left = BinaryExpr(left, right, operator)
-
         return left
 
     def parsePrimaryExpr(self) -> Exprs:
@@ -71,6 +67,9 @@ class Parser:
 
         if token == TokenType.Identifier:
             return Identifier(self.eat().value)
+
+        if token == TokenType.Null:
+            return NullLiteral(self.eat().value)
 
         elif token == TokenType.Number:
             return NumericLiteral(float(self.eat().value))

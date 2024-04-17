@@ -7,6 +7,7 @@ class NodeType:
     NumericLiteral = "NumericLiteral"
     Identifier = "Identifier"
     BinaryExpr = "BinaryExpr"
+    NullLiteral = "NullLiteral"
 
 class Stmt:
     def __init__(self, kind: NodeType):
@@ -54,3 +55,10 @@ class NumericLiteral(Exprs):
         self.value = value
     def __repr__(self):
         return f"NumericLiteral(kind: {self.kind}, value: {self.value})"
+    
+class NullLiteral(Exprs):
+    def __init__(self, value: str):
+        super().__init__(NodeType.NullLiteral)
+        self.value = value
+    def __repr__(self):
+        return f"NullLiteral(kind: {self.kind}, value: {self.value})"

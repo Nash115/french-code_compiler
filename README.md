@@ -3,19 +3,19 @@ A code compiler with French syntax!!! BAGUETTE !
 
 ![Image de baguette](https://github.com/microsoft/fluentui-emoji/blob/main/assets/Baguette%20bread/3D/baguette_bread_3d.png?raw=true)
 
-# ⚠️ ATTENTION ! The only working example type for now is this one!!!
+# ⚠️ ATTENTION ! The only working example for now is this one!!!
 ```
-python compiler.py examples/math_expression.baguette
+python main.py examples/math_expression.baguette
 ```
 
 # 💻 How to use:
 ```
-python compiler.py [file]
+python main.py [file]
 ```
 
 Example:
 ```
-python compiler.py examples/example01.baguette
+python main.py examples/example01.baguette
 ```
 
 # 🙏🏻 Special thanks to:
