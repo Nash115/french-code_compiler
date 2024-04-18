@@ -8,4 +8,4 @@ if __name__ == "__main__":
     parser = parser.Parser()
     program = parser.produceAST(code_file) # This is the AST
     result = interpreter.evaluate(program)
-    print(result)
+    print(f"Valeur du dernier résultat : {result.value}")
